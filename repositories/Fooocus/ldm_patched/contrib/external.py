@@ -18,7 +18,6 @@ import safetensors.torch
 
 pass  # sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "ldm_patched"))
 
-
 import ldm_patched.modules.diffusers_load
 import ldm_patched.modules.samplers
 import ldm_patched.modules.sample

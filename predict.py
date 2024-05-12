@@ -7,6 +7,7 @@ import copy
 import os
 from typing import List
 import numpy as np
+from repositories import modules
 
 from PIL import Image
 from cog import BasePredictor, BaseModel, Input, Path
@@ -40,6 +41,7 @@ class Output(BaseModel):
 
 class Predictor(BasePredictor):
     """Predictor"""
+
     def setup(self) -> None:
         """
         Load the model into memory to make running multiple predictions efficient
@@ -59,7 +61,7 @@ class Predictor(BasePredictor):
             default=','.join(default_styles),
             description="Fooocus styles applied for image generation, separated by comma"),
         performance_selection: str = Input(
-            default='Speed', 
+            default='Speed',
             choices=['Speed', 'Quality', 'Extreme Speed', 'Lightning'],
             description="Performance selection"),
         aspect_ratios_selection: str = Input(
@@ -191,7 +193,7 @@ class Predictor(BasePredictor):
         refiner_model_name = default_refiner_model_name
 
         lora_manager = LoraManager()
-        
+
         # Use default loras if selected
         loras = copy.copy(default_loras) if use_default_loras else []
 
@@ -201,7 +203,8 @@ class Predictor(BasePredictor):
 
             loras_with_weights = [url.split(',') for url in urls]
 
-            custom_lora_paths = lora_manager.check([lw[0] for lw in loras_with_weights])
+            custom_lora_paths = lora_manager.check(
+                [lw[0] for lw in loras_with_weights])
             custom_loras = [[path, float(lw[1]) if len(lw) > 1 else 1.0] for path, lw in
                             zip(custom_lora_paths, loras_with_weights)]
 
