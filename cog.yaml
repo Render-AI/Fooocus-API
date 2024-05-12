@@ -36,6 +36,8 @@ build:
     - "torchvision==0.16.0"
     - "colorlog==6.8.2"
     - "rich==13.7.1"
+    - "/repositories"
+    - "/repositories/Fooocus"
 
   # commands run after the environment is set up
   # run:
