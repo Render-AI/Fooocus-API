@@ -9,6 +9,9 @@ from typing import List
 import numpy as np
 from repositories import modules
 
+script_path = os.path.dirname(os.path.realpath(__file__))
+module_path = os.path.join(script_path, "repositories/Fooocus")
+
 from PIL import Image
 from cog import BasePredictor, BaseModel, Input, Path
 from fooocusapi.utils.lora_manager import LoraManager
