@@ -6,8 +6,7 @@ build:
   gpu: true
   cuda: "12.1"
   run:
-    - "ls"
-    - pip install /repositories/Fooocus
+    - "ls"    
 
   # a list of ubuntu apt packages to install
   system_packages:
@@ -19,6 +18,7 @@ build:
 
   # a list of packages in the format <package-name>==<version>
   python_packages:
+    - "git+https://github.com/machineminded/Fooocus-inswapper.git"
     - "torchsde==0.2.5"
     - "einops==0.4.1"
     - "transformers==4.30.2"
