@@ -6,9 +6,6 @@ from pydantic import (
     ValidationError
 )
 
-import os
-import sys
-
 from modules.config import (
     default_sampler,
     default_scheduler,
