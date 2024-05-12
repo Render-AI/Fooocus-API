@@ -4,6 +4,7 @@ https://github.com/replicate/cog/blob/main/docs/python.md
 """
 
 import sys
+import os 
 script_path = os.path.dirname(os.path.realpath(__file__))
 repositories_path = os.path.join(script_path, "repositories")
 module_path = os.path.join(script_path, "repositories/Fooocus")
@@ -11,7 +12,7 @@ sys.path.append(repositories_path)
 sys.path.append(module_path)
 
 import copy
-import os
+
 from typing import List
 import numpy as np
 from repositories import modules
