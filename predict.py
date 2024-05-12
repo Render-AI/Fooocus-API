@@ -8,6 +8,7 @@ import os
 script_path = os.path.dirname(os.path.realpath(__file__))
 repositories_path = os.path.join(script_path, "repositories")
 module_path = os.path.join(script_path, "repositories/Fooocus")
+sys.path.append(script_path)
 sys.path.append(repositories_path)
 sys.path.append(module_path)
 
