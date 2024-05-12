@@ -6,7 +6,8 @@ build:
   gpu: true
   cuda: "12.1"
   run:
-    - pip install src/repositories/Fooocus
+    - "ls"
+    - pip install /repositories/Fooocus
 
   # a list of ubuntu apt packages to install
   system_packages:
